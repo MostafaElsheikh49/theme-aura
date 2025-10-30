@@ -2,66 +2,8 @@
   "name": "AURA",
   "slug": "theme-aura",
   "version": "0.1.0",
-  "description": "Futuristic bilingual theme for tech & electronics stores.",
+  "description": "AURA Theme",
   "author": "Moss & Friend",
   "license": "MIT",
-
-  "settings": [
-    {
-      "id": "accent_color",
-      "type": "color",
-      "label": "Accent Color",
-      "default": "#2AF0FF"
-    },
-    {
-      "id": "arabic_font",
-      "type": "select",
-      "label": "Arabic Font",
-      "options": [
-        { "label": "Cairo", "value": "Cairo" },
-        { "label": "IBM Plex Arabic", "value": "IBM Plex Arabic" },
-        { "label": "Tajawal", "value": "Tajawal" }
-      ],
-      "default": "Cairo"
-    },
-    {
-      "id": "english_font",
-      "type": "select",
-      "label": "English Font",
-      "options": [
-        { "label": "Poppins", "value": "Poppins" },
-        { "label": "Inter", "value": "Inter" },
-        { "label": "IBM Plex Sans", "value": "IBM Plex Sans" }
-      ],
-      "default": "Poppins"
-    },
-    {
-      "id": "button_shape",
-      "type": "select",
-      "label": "Button Shape",
-      "options": [
-        { "label": "Rounded", "value": "rounded" },
-        { "label": "Square", "value": "square" },
-        { "label": "Capsule", "value": "capsule" }
-      ],
-      "default": "capsule"
-    },
-    {
-      "id": "hero_background",
-      "type": "image",
-      "label": "Hero Background Image"
-    },
-    {
-      "id": "hero_headline_en",
-      "type": "text",
-      "label": "Hero Headline (EN)",
-      "default": "Experience the Future of Tech"
-    },
-    {
-      "id": "hero_headline_ar",
-      "type": "text",
-      "label": "عنوان الهيدر",
-      "default": "اختبر مستقبل التقنية"
-    }
-  ]
+  "settings": []
 }
