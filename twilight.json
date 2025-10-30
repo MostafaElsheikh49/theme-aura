@@ -5,7 +5,7 @@
   "description": "Futuristic bilingual theme for tech & electronics stores.",
   "author": "Moss & Friend",
   "license": "MIT",
-  "color_scheme": "auto",
+
   "settings": [
     {
       "id": "accent_color",
@@ -17,21 +17,33 @@
       "id": "arabic_font",
       "type": "select",
       "label": "Arabic Font",
-      "options": ["Cairo", "IBM Plex Arabic", "Tajawal"],
+      "options": [
+        { "label": "Cairo", "value": "Cairo" },
+        { "label": "IBM Plex Arabic", "value": "IBM Plex Arabic" },
+        { "label": "Tajawal", "value": "Tajawal" }
+      ],
       "default": "Cairo"
     },
     {
       "id": "english_font",
       "type": "select",
       "label": "English Font",
-      "options": ["Poppins", "Inter", "IBM Plex Sans"],
+      "options": [
+        { "label": "Poppins", "value": "Poppins" },
+        { "label": "Inter", "value": "Inter" },
+        { "label": "IBM Plex Sans", "value": "IBM Plex Sans" }
+      ],
       "default": "Poppins"
     },
     {
       "id": "button_shape",
       "type": "select",
       "label": "Button Shape",
-      "options": ["rounded", "square", "capsule"],
+      "options": [
+        { "label": "Rounded", "value": "rounded" },
+        { "label": "Square", "value": "square" },
+        { "label": "Capsule", "value": "capsule" }
+      ],
       "default": "capsule"
     },
     {
