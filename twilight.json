@@ -15,16 +15,16 @@
     "filters"
   ],
   "components": [
-    {
-      "name": "aura-hero",
-      "title": "AURA • Hero",
-      "icon": "sicon-image-carousel",
-      "path": "home.aura-hero",
-      "fields": [
-        { "id": "headline_en", "type": "string", "label": "Headline (EN)" },
-        { "id": "headline_ar", "type": "string", "label": "العنوان (AR)" },
-        { "id": "background", "type": "string", "format": "image", "label": "Background" }
-      ]
-    }
-  ]
+  {
+    "name": "hero",
+    "title": "AURA • Hero",
+    "icon": "sicon-image-carousel",
+    "path": "home.hero",
+    "fields": [
+      { "id": "headline_en", "type": "string", "label": "Headline (EN)" },
+      { "id": "headline_ar", "type": "string", "label": "العنوان (AR)" },
+      { "id": "background", "type": "string", "format": "image", "label": "Background" }
+    ]
+  }
+]
 }
