@@ -1,0 +1,17 @@
+{# components/common/breadcrumbs.twig #}
+<nav class="aura-breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="{{ path('home') }}">{% if locale.code == 'ar' %}الرئيسية{% else %}Home{% endif %}</a></li>
+      {% for crumb in breadcrumbs %}
+        <li>
+          {% if crumb.url %}
+            <a href="{{ crumb.url }}">{{ crumb.title }}</a>
+          {% else %}
+            <span aria-current="page">{{ crumb.title }}</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+  </div>
+</nav>
