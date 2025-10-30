@@ -1,0 +1,28 @@
+{
+  "theme": {
+    "name": "AURA",
+    "tagline": "Illuminate Your Store.",
+    "nav": {
+      "home": "Home",
+      "shop": "Shop",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "hero": {
+      "headline": "Experience the Future of Tech",
+      "sub": "Premium electronics & smart devices"
+    },
+    "features": {
+      "delivery": "Fast Delivery",
+      "authentic": "100% Original",
+      "warranty": "Local Warranty",
+      "secure": "Secure Payments"
+    },
+    "newsletter": {
+      "title": "Stay in the loop",
+      "subtitle": "Get news & exclusive offers",
+      "placeholder": "Your email",
+      "cta": "Subscribe"
+    }
+  }
+}
