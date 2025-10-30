@@ -1,5 +1,7 @@
-{% include 'components/home/hero.twig' %}
-{% include 'components/home/main-links.twig' %}
-{% include 'components/home/slider-products.twig' %}
-{% include 'components/home/square-banners.twig' %}
-{% include 'components/home/testimonials.twig' %}
+{# pages/index.twig — required entry for Salla preview #}
+{% extends "layouts/default.twig" %}
+
+{% block content %}
+  {# Reuse your existing homepage template #}
+  {% include "pages/home.twig" %}
+{% endblock %}
