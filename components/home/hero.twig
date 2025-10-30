@@ -1,14 +1,13 @@
-{# components/home/hero.twig #}
-<section class="aura-hero" style="background-image:url('{{ settings.hero_background }}')">
-  <div class="overlay"></div>
-  <div class="container">
-    <h1 class="headline">
-      {{ settings.hero_headline_ar if locale.code == 'ar' else settings.hero_headline_en }}
-    </h1>
-    <p class="sub">{{ t('theme.hero.sub') }}</p>
-    <div class="cta">
-      <a href="{{ path('catalog') }}" class="btn btn-primary">{% if locale.code == 'ar' %}تسوّق الآن{% else %}Shop Now{% endif %}</a>
-      <a href="{{ path('brands') }}" class="btn btn-secondary">{% if locale.code == 'ar' %}العلامات التجارية{% else %}Brands{% endif %}</a>
-    </div>
+{% set bg = fields.background ?? '' %}
+{% set title_en = fields.headline_en ?? '' %}
+{% set title_ar = fields.headline_ar ?? '' %}
+<section class="rb-hero" style="{% if bg %}--rb-hero-bg:url('{{ bg }}'){% endif %}">
+  <div class="rb-hero__inner">
+    {% if title_ar %}
+      <h1 class="rb-hero__title rb-hero__title--ar">{{ title_ar }}</h1>
+    {% endif %}
+    {% if title_en %}
+      <h2 class="rb-hero__title rb-hero__title--en">{{ title_en }}</h2>
+    {% endif %}
   </div>
 </section>
