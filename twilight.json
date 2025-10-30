@@ -1,9 +1,111 @@
 {
-  "name": "AURA",
-  "slug": "theme-aura",
   "version": "0.1.0",
-  "description": "AURA Theme",
-  "author": "Moss & Friend",
-  "license": "MIT",
-  "settings": []
+  "theme_name": "AURA",
+  "repo_url": "https://github.com/MostafaElsheikh49/theme-aura",
+  "support_url": "https://salla.dev",
+
+  "settings": [
+    {
+      "type": "boolean",
+      "label": "Dark Top Nav",
+      "id": "topnav_is_dark",
+      "format": "switch",
+      "selected": true
+    },
+    {
+      "type": "string",
+      "id": "placeholder",
+      "format": "hidden",
+      "value": "assets/img/placeholder.png"
+    },
+    {
+      "type": "color",
+      "label": "Accent Color",
+      "id": "accent_color",
+      "value": "#2AF0FF"
+    },
+    {
+      "type": "select",
+      "label": "Arabic Font",
+      "id": "arabic_font",
+      "options": [
+        { "label": "Cairo", "value": "Cairo" },
+        { "label": "IBM Plex Arabic", "value": "IBM Plex Arabic" },
+        { "label": "Tajawal", "value": "Tajawal" }
+      ],
+      "value": "Cairo"
+    },
+    {
+      "type": "select",
+      "label": "English Font",
+      "id": "english_font",
+      "options": [
+        { "label": "Poppins", "value": "Poppins" },
+        { "label": "Inter", "value": "Inter" },
+        { "label": "IBM Plex Sans", "value": "IBM Plex Sans" }
+      ],
+      "value": "Poppins"
+    },
+    {
+      "type": "select",
+      "label": "Button Shape",
+      "id": "button_shape",
+      "options": [
+        { "label": "Rounded", "value": "rounded" },
+        { "label": "Square", "value": "square" },
+        { "label": "Capsule", "value": "capsule" }
+      ],
+      "value": "capsule"
+    },
+    {
+      "type": "string",
+      "label": "Hero Background Image",
+      "id": "hero_background",
+      "format": "image",
+      "value": ""
+    },
+    {
+      "type": "string",
+      "label": "Hero Headline (EN)",
+      "id": "hero_headline_en",
+      "value": "Experience the Future of Tech"
+    },
+    {
+      "type": "string",
+      "label": "عنوان الهيدر",
+      "id": "hero_headline_ar",
+      "value": "اختبر مستقبل التقنية"
+    }
+  ],
+
+  "features": [
+    "component-featured-products",
+    "component-store-features",
+    "component-brands",
+    "component-fixed-banner",
+    "component-photos-slider",
+    "component-products-slider",
+    "filters"
+  ],
+
+  "components": [
+    {
+      "name": "aura-hero",
+      "title": "AURA • Hero Banner",
+      "icon": "sicon-image-carousel",
+      "path": "home.aura-hero",
+      "fields": [
+        { "id": "headline_en", "type": "string", "label": "Headline (EN)" },
+        { "id": "headline_ar", "type": "string", "label": "العنوان (AR)" },
+        { "id": "background", "type": "string", "label": "Background", "format": "image" }
+      ]
+    },
+    {
+      "name": "aura-newsletter",
+      "title": "AURA • Newsletter",
+      "icon": "sicon-mail",
+      "path": "common.newsletter",
+      "fields": []
+    }
+  ]
 }
