@@ -1,30 +1,9 @@
 {
-  "version": "0.1.2",
+  "version": "0.1.4",
   "theme_name": "AURA",
   "repo_url": "https://github.com/MostafaElsheikh49/theme-aura",
   "support_url": "https://salla.dev",
-  "settings": [
-    { "type": "boolean", "label": "Dark Top Nav", "id": "topnav_is_dark", "format": "switch", "selected": true },
-    { "type": "string", "id": "placeholder", "format": "hidden", "value": "assets/img/placeholder.png" },
-    { "type": "color", "label": "Accent Color", "id": "accent_color", "value": "#2AF0FF" }
-  ],
-  "features": [
-    "component-featured-products",
-    "component-store-features",
-    "component-photos-slider",
-    "filters"
-  ],
-  "components": [
-  {
-    "name": "hero",
-    "title": "AURA • Hero",
-    "icon": "sicon-image-carousel",
-    "path": "home.hero",
-    "fields": [
-      { "id": "headline_en", "type": "string", "label": "Headline (EN)" },
-      { "id": "headline_ar", "type": "string", "label": "العنوان (AR)" },
-      { "id": "background", "type": "string", "format": "image", "label": "Background" }
-    ]
-  }
-]
+  "settings": [],
+  "features": [],
+  "components": []
 }
