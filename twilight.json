@@ -2,97 +2,54 @@
   "name": "AURA",
   "slug": "theme-aura",
   "version": "0.1.0",
-  "description": "Futuristic, bilingual Salla theme for tech & electronics stores. Dark-ready, mobile-first with glowing CTAs and glass cards.",
+  "description": "Futuristic bilingual theme for tech & electronics stores.",
   "author": "Moss & Friend",
   "license": "MIT",
-  "features": {
-    "blog": true,
-    "brands": true,
-    "wishlist": true,
-    "loyalty": true
-  },
-  "components": {
-    "home_hero": {
-      "title": "AURA • Hero Banner",
-      "icon": "heroicons-outline:photograph",
-      "path": "components/home/hero.twig"
-    },
-    "home_features": {
-      "title": "AURA • Store Features",
-      "icon": "heroicons-outline:collection",
-      "path": "components/home/features.twig"
-    },
-    "home_products": {
-      "title": "AURA • Featured Products Grid",
-      "icon": "heroicons-outline:template",
-      "path": "components/home/featured-products.twig"
-    },
-    "common_newsletter": {
-      "title": "AURA • Newsletter Signup",
-      "icon": "heroicons-outline:mail",
-      "path": "components/common/newsletter.twig"
-    }
-  },
-  "settings": {
-    "color_scheme": {
-      "type": "list",
-      "label": "Color Scheme",
-      "options": [
-        "light",
-        "dark",
-        "auto"
-      ],
-      "default": "auto"
-    },
-    "accent_color": {
-      "type": "string",
-      "label": "Accent Color (HEX)",
+  "color_scheme": "auto",
+  "settings": [
+    {
+      "id": "accent_color",
+      "type": "color",
+      "label": "Accent Color",
       "default": "#2AF0FF"
     },
-    "arabic_font": {
-      "type": "list",
+    {
+      "id": "arabic_font",
+      "type": "select",
       "label": "Arabic Font",
-      "options": [
-        "Cairo",
-        "IBM Plex Arabic",
-        "Tajawal"
-      ],
+      "options": ["Cairo", "IBM Plex Arabic", "Tajawal"],
       "default": "Cairo"
     },
-    "english_font": {
-      "type": "list",
+    {
+      "id": "english_font",
+      "type": "select",
       "label": "English Font",
-      "options": [
-        "Poppins",
-        "Inter",
-        "IBM Plex Sans"
-      ],
+      "options": ["Poppins", "Inter", "IBM Plex Sans"],
       "default": "Poppins"
     },
-    "button_shape": {
-      "type": "list",
+    {
+      "id": "button_shape",
+      "type": "select",
       "label": "Button Shape",
-      "options": [
-        "rounded",
-        "square",
-        "capsule"
-      ],
+      "options": ["rounded", "square", "capsule"],
       "default": "capsule"
     },
-    "hero_background": {
-      "type": "string",
-      "label": "Hero Background Image URL",
-      "default": ""
+    {
+      "id": "hero_background",
+      "type": "image",
+      "label": "Hero Background Image"
     },
-    "hero_headline_en": {
-      "type": "string",
+    {
+      "id": "hero_headline_en",
+      "type": "text",
       "label": "Hero Headline (EN)",
       "default": "Experience the Future of Tech"
     },
-    "hero_headline_ar": {
-      "type": "string",
+    {
+      "id": "hero_headline_ar",
+      "type": "text",
       "label": "عنوان الهيدر",
       "default": "اختبر مستقبل التقنية"
     }
-  }
+  ]
 }
