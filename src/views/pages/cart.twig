@@ -1,0 +1,49 @@
+{# pages/cart.twig #}
+{% extends 'layouts/master.twig' %}
+
+{% block content %}
+<section class="aura-cart">
+  <div class="container">
+    <h1>{% if locale.code == 'ar' %}سلة التسوق{% else %}Shopping Cart{% endif %}</h1>
+
+    {% if cart.items|length > 0 %}
+      <div class="cart-grid">
+        <div class="cart-items">
+          {% for item in cart.items %}
+          <article class="cart-line">
+            <img class="thumb" src="{{ item.image }}" alt="{{ item.name }}">
+            <div class="info">
+              <a class="name" href="{{ path('product', {'slug': item.slug}) }}">{{ item.name }}</a>
+              <div class="meta">
+                <form action="{{ path('cart.update', {'id': item.id}) }}" method="post" class="qty">
+                  <input type="number" name="quantity" min="1" value="{{ item.quantity }}">
+                  <button class="btn btn-secondary">{% if locale.code == 'ar' %}تحديث{% else %}Update{% endif %}</button>
+                </form>
+                <form action="{{ path('cart.remove', {'id': item.id}) }}" method="post">
+                  <button class="btn">{% if locale.code == 'ar' %}حذف{% else %}Remove{% endif %}</button>
+                </form>
+              </div>
+            </div>
+            <div class="line-price">{{ item.total.formatted }}</div>
+          </article>
+          {% endfor %}
+        </div>
+
+        <aside class="cart-summary">
+          <h3>{% if locale.code == 'ar' %}الملخص{% else %}Summary{% endif %}</h3>
+          <ul class="totals">
+            <li><span>{% if locale.code == 'ar' %}المجموع الفرعي{% else %}Subtotal{% endif %}</span><b>{{ cart.subtotal.formatted }}</b></li>
+            {% if cart.shipping %}<li><span>{% if locale.code == 'ar' %}الشحن{% else %}Shipping{% endif %}</span><b>{{ cart.shipping.formatted }}</b></li>{% endif %}
+            {% if cart.taxes %}<li><span>{% if locale.code == 'ar' %}الضريبة{% else %}Tax{% endif %}</span><b>{{ cart.taxes.formatted }}</b></li>{% endif %}
+            <li class="grand"><span>{% if locale.code == 'ar' %}الإجمالي{% else %}Total{% endif %}</span><b>{{ cart.total.formatted }}</b></li>
+          </ul>
+          <a class="btn btn-primary" href="{{ path('checkout') }}">{% if locale.code == 'ar' %}إتمام الشراء{% else %}Checkout{% endif %}</a>
+        </aside>
+      </div>
+    {% else %}
+      <p>{% if locale.code == 'ar' %}سلتك فارغة{% else %}Your cart is empty{% endif %}</p>
+      <a class="btn btn-primary" href="{{ path('catalog') }}">{% if locale.code == 'ar' %}تابع التسوق{% else %}Continue Shopping{% endif %}</a>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

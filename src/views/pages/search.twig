@@ -1,0 +1,31 @@
+{# pages/search.twig #}
+{% extends 'layouts/master.twig' %}
+
+{% block content %}
+  {% include 'components/common/breadcrumbs.twig' %}
+
+  <section class="aura-search">
+    <div class="container">
+      <header class="section-head">
+        <h1>{% if locale.code == 'ar' %}نتائج البحث{% else %}Search Results{% endif %}</h1>
+        {% if query %}<p class="muted">“{{ query }}”</p>{% endif %}
+      </header>
+
+      <div class="grid products">
+        {% for product in products.items %}
+          <article class="card">
+            <a href="{{ path('product', {'slug': product.slug}) }}">
+              <img src="{{ product.image }}" alt="{{ product.name }}">
+              <h4>{{ product.name }}</h4>
+              <div class="price">{{ product.price.formatted }}</div>
+            </a>
+          </article>
+        {% else %}
+          <p>{% if locale.code == 'ar' %}لم يتم العثور على نتائج{% else %}No results found{% endif %}</p>
+        {% endfor %}
+      </div>
+
+      {% include 'components/common/pagination.twig' %}
+    </div>
+  </section>
+{% endblock %}

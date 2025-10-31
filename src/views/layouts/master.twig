@@ -1,0 +1,34 @@
+{% extends "layouts/base.twig" %}
+{# layouts/master.twig — global layout #}
+<!DOCTYPE html>
+<html lang="{{ locale.code }}" dir="{{ locale.dir }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ store.name }} — {{ page.title|default('AURA') }}</title>
+  {# Salla CSS variables & icons helpers per docs #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  {# Fonts are configurable; fallback stack #}
+  <style>
+    :root {
+      --aura-accent: {{ settings.accent_color|default('#2AF0FF') }};
+    }
+    html { font-family: '{{ settings.english_font|default("Poppins") }}', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    [dir="rtl"] html { font-family: '{{ settings.arabic_font|default("Cairo") }}', "Tahoma", sans-serif; }
+  </style>
+  <link rel="stylesheet" href="{{ asset('assets/css/aura.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body class="scheme-{{ settings.color_scheme|default('auto') }}">
+  {% include 'components/common/header.twig' %}
+
+  <main id="content">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include 'components/common/footer.twig' %}
+  <script src="{{ asset('assets/js/aura.js') }}" defer></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
