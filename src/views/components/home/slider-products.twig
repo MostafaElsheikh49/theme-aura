@@ -1,0 +1,27 @@
+{% set bg = fields.background ?? '' %}
+{% set title = fields.title ?? '' %}
+{% set desc  = fields.description ?? '' %}
+{% set products = fields.products is iterable ? fields.products : [] %}
+{% set view_all = fields.display_all_url ?? [] %}
+<section class="rb-p-slider" style="{% if bg %}--rb-p-bg:url('{{ bg }}'){% endif %}">
+  <header class="rb-p-slider__head">
+    {% if title %}<h3 class="rb-p-slider__title">{{ title }}</h3>{% endif %}
+    {% if desc %}<p class="rb-p-slider__desc">{{ desc }}</p>{% endif %}
+    {% if view_all and view_all.0 and view_all.0.url %}
+      <a class="rb-p-slider__all" href="{{ view_all.0.url }}">{{ 'عرض الكل' }}</a>
+    {% endif %}
+  </header>
+  <div class="rb-p-slider__track">
+    {% for p in products %}
+      <article class="rb-card">
+        <a href="{{ p.url }}">
+          <div class="rb-card__img"><img src="{{ p.image }}" alt="{{ p.name }}"></div>
+          <h4 class="rb-card__title">{{ p.name }}</h4>
+          {% if p.price %}<div class="rb-card__price">{{ p.price }}</div>{% endif %}
+        </a>
+      </article>
+    {% else %}
+      <div class="rb-p-slider__empty">Select products in component settings.</div>
+    {% endfor %}
+  </div>
+</section>

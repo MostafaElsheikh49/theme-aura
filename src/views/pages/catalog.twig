@@ -1,0 +1,70 @@
+{# pages/catalog.twig #}
+{% extends 'layouts/master.twig' %}
+
+{% block content %}
+  {% include 'components/common/breadcrumbs.twig' %}
+
+  <section class="aura-catalog">
+    <div class="container">
+      <header class="section-head">
+        <h1>{{ category.title|default(t('theme.nav.shop')) }}</h1>
+        {% if category.description %}<p class="muted">{{ category.description }}</p>{% endif %}
+      </header>
+
+      <div class="catalog-layout">
+        <aside class="filters">
+          <h4>{% if locale.code == 'ar' %}تصفية{% else %}Filters{% endif %}</h4>
+          {% if filters %}
+            {% for f in filters %}
+              <div class="filter">
+                <details>
+                  <summary>{{ f.title }}</summary>
+                  <ul>
+                    {% for opt in f.options %}
+                      <li><a href="{{ opt.url }}">{{ opt.title }} <small>{{ opt.count }}</small></a></li>
+                    {% endfor %}
+                  </ul>
+                </details>
+              </div>
+            {% endfor %}
+          {% else %}
+            <p class="muted">{% if locale.code == 'ar' %}لا توجد فلاتر متاحة{% else %}No filters available{% endif %}</p>
+          {% endif %}
+        </aside>
+
+        <div class="results">
+          <div class="toolbar">
+            <div class="count">{{ products.total }} {% if locale.code == 'ar' %}منتج{% else %}items{% endif %}</div>
+            <div class="sort">
+              <label>{% if locale.code == 'ar' %}ترتيب{% else %}Sort{% endif %}</label>
+              <select onchange="location.href=this.value">
+                {% for opt in sort.options %}
+                  <option value="{{ opt.url }}" {{ opt.active ? 'selected' : '' }}>{{ opt.title }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+
+          <div class="grid products">
+            {% for product in products.items %}
+              <article class="card">
+                <a href="{{ path('product', {'slug': product.slug}) }}">
+                  <img src="{{ product.image }}" alt="{{ product.name }}">
+                  <h4>{{ product.name }}</h4>
+                  <div class="price">{{ product.price.formatted }}</div>
+                </a>
+                <form action="{{ path('cart.add', {'id': product.id}) }}" method="post">
+                  <button class="btn btn-primary">{% if locale.code == 'ar' %}أضف للسلة{% else %}Add to cart{% endif %}</button>
+                </form>
+              </article>
+            {% else %}
+              <p>{% if locale.code == 'ar' %}لا توجد منتجات هنا بعد{% else %}No products found yet{% endif %}</p>
+            {% endfor %}
+          </div>
+
+          {% include 'components/common/pagination.twig' %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

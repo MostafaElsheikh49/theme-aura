@@ -1,0 +1,22 @@
+{# pages/product.twig #}
+{% extends 'layouts/master.twig' %}
+
+{% block content %}
+<section class="aura-product">
+  <div class="container grid">
+    <div class="gallery">
+      <img src="{{ product.image }}" alt="{{ product.name }}">
+    </div>
+    <div class="summary">
+      <h1>{{ product.name }}</h1>
+      <div class="price">{{ product.price.formatted }}</div>
+      <div class="specs">
+        {{ product.description|raw }}
+      </div>
+      <form action="{{ path('cart.add', {'id': product.id}) }}" method="post">
+        <button class="btn btn-primary">{% if locale.code == 'ar' %}أضف للسلة{% else %}Add to cart{% endif %}</button>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

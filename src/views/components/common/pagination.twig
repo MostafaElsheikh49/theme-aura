@@ -1,0 +1,20 @@
+{# components/common/pagination.twig #}
+{% if pagination and pagination.total_pages > 1 %}
+<nav class="aura-pagination" aria-label="Pagination">
+  <div class="container">
+    <ul>
+      {% if pagination.prev_url %}
+      <li><a href="{{ pagination.prev_url }}">&laquo;</a></li>
+      {% endif %}
+      {% for p in 1..pagination.total_pages %}
+        <li class="{{ p == pagination.current ? 'active' : '' }}">
+          <a href="{{ pagination.page_url(p) }}">{{ p }}</a>
+        </li>
+      {% endfor %}
+      {% if pagination.next_url %}
+      <li><a href="{{ pagination.next_url }}">&raquo;</a></li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>
+{% endif %}

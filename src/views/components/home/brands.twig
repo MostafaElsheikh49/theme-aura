@@ -1,0 +1,17 @@
+{# components/home/brands.twig #}
+<section class="aura-brands">
+  <div class="container">
+    <header class="section-head">
+      <h3>{% if locale.code == 'ar' %}علامات تجارية{% else %}Brands{% endif %}</h3>
+    </header>
+    <div class="brand-row">
+      {% for brand in brands|slice(0,10) %}
+        <a class="brand-card" href="{{ path('brand', {'slug': brand.slug}) }}">
+          <img src="{{ brand.logo }}" alt="{{ brand.name }}">
+        </a>
+      {% else %}
+        <p>{% if locale.code == 'ar' %}أضف علاماتك التجارية من لوحة التحكم{% else %}Add your brands in the dashboard{% endif %}</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+{# components/common/header.twig #}
+<header class="aura-header">
+  <div class="container">
+    <a class="brand" href="{{ path('home') }}">
+      {% if store.logo %}<img src="{{ store.logo }}" alt="{{ store.name }}">{% else %}{{ store.name }}{% endif %}
+    </a>
+    <nav class="nav">
+      <a href="{{ path('home') }}">{{ t('theme.nav.home') }}</a>
+      <a href="{{ path('catalog') }}">{{ t('theme.nav.shop') }}</a>
+      {% if blog.enabled %}<a href="{{ path('blog') }}">{{ t('theme.nav.blog') }}</a>{% endif %}
+      <a href="{{ path('page', {'slug':'contact'}) }}">{{ t('theme.nav.contact') }}</a>
+    </nav>
+    <div class="actions">
+      <a class="icon" href="{{ path('search') }}" aria-label="Search">{% icon 'outline:search' %}</a>
+      <a class="icon" href="{{ path('wishlist') }}" aria-label="Wishlist">{% icon 'outline:heart' %}</a>
+      <a class="icon" href="{{ path('cart') }}" aria-label="Cart">{% icon 'outline:shopping-cart' %}</a>
+      <a class="btn btn-primary" href="{{ path('catalog') }}">{{ __('Shop Now') }}</a>
+    </div>
+  </div>
+</header>
