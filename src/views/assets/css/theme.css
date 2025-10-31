@@ -1,7 +1,0 @@
-:root{--rb-teal:#00A6A6;--rb-navy:#0A2E3A;--rb-text:#eaf6f6;--rb-card:#0f3c4a;}
-.rb-hero{padding:8rem 1.5rem;background:var(--rb-navy);color:var(--rb-text)}
-.rb-links__item{background:var(--rb-card);color:var(--rb-text)}
-.rb-p-slider{background:var(--rb-navy)}
-.rb-card{background:var(--rb-card);border-radius:14px;overflow:hidden}
-.rb-sq__item{background:var(--rb-card);color:var(--rb-text)}
-.rb-tm{background:var(--rb-navy);color:var(--rb-text)}
