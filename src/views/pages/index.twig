@@ -1,5 +1,6 @@
-{% include 'components/home/hero.twig' %}
-{% include 'components/home/main-links.twig' %}
-{% include 'components/home/slider-products.twig' %}
-{% include 'components/home/square-banners.twig' %}
-{% include 'components/home/testimonials.twig' %}
+{# src/views/pages/index.twig #}
+{% extends "layouts/master.twig" %}
+
+{% block content %}
+  {% include "pages/home.twig" %}
+{% endblock %}
