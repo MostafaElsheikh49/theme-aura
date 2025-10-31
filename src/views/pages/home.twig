@@ -1,5 +1,25 @@
-{% include 'components/home/hero.twig' %}
-{% include 'components/home/main-links.twig' %}
-{% include 'components/home/slider-products.twig' %}
-{% include 'components/home/square-banners.twig' %}
-{% include 'components/home/testimonials.twig' %}
+{# src/views/pages/home.twig #}
+<section class="container">
+  {% include "components/common/breadcrumbs.twig" ignore missing %}
+
+  {# Hero / top banner #}
+  {% include "components/home/hero.twig" ignore missing %}
+
+  {# Quick links / categories #}
+  {% include "components/home/main-links.twig" ignore missing %}
+
+  {# Featured products carousel #}
+  {% include "components/home/slider-products.twig" ignore missing %}
+
+  {# Two square banners #}
+  {% include "components/home/square-banners.twig" ignore missing %}
+
+  {# Brand strip #}
+  {% include "components/home/brands.twig" ignore missing %}
+
+  {# Features row #}
+  {% include "components/home/features.twig" ignore missing %}
+
+  {# Testimonials #}
+  {% include "components/home/testimonials.twig" ignore missing %}
+</section>
